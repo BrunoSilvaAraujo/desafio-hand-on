@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express')
 const axios = require('axios')
-const fs = require('fs')
 const app = express()
 const port = 3000
 
@@ -11,7 +10,6 @@ app.get('/', async (req, res) => {
 	let response = `<html><head><title>Desafio</title></head><body>`
 
 	await axios.get(process.env.URL ).then(resp => {
-		console.log(resp.data)
 
 		resp.data.map((item, i) => {
 		if ( i <= 99 ){
